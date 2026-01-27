@@ -144,6 +144,41 @@ class Program
             }
         }
 
+        // VIEW PERSONS BY CITY
+        Console.WriteLine("VIEW PERSONS BY CITY");
+
+        foreach (var entry in addressBookDictionary)
+        {
+            Console.WriteLine("Address Book: " + entry.Key);
+
+            Dictionary<string, List<CreateContacts>> cityMap = entry.Value.ViewByCity();
+
+            foreach (var cityEntry in cityMap)
+            {
+                Console.WriteLine("City: " + cityEntry.Key);
+
+                entry.Value.DisplayContacts(cityEntry.Value);
+            }
+        }
+
+        //VIEW PERSONS BY STATE
+        Console.WriteLine("VIEW PERSONS BY STATE");
+
+        foreach (var entry in addressBookDictionary)
+        {
+            Console.WriteLine("Address Book: " + entry.Key);
+
+            Dictionary<string, List<CreateContacts>> stateMap = entry.Value.ViewByState();
+
+            foreach (var stateEntry in stateMap)
+            {
+                Console.WriteLine("State: " + stateEntry.Key);
+
+                entry.Value.DisplayContacts(stateEntry.Value);
+            }
+        }
+
+
 
         Console.ReadKey();
     }

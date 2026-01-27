@@ -138,5 +138,57 @@ public class AddressBook
         return result;
     }
 
+    // View Persons By City
+    public Dictionary<string, List<CreateContacts>> ViewByCity()
+    {
+        Dictionary<string, List<CreateContacts>> cityDictionary = new Dictionary<string, List<CreateContacts>>();
+
+        foreach (CreateContacts person in contacts)
+        {
+            if (!cityDictionary.ContainsKey(person.City))
+            {
+                cityDictionary.Add(person.City, new List<CreateContacts>());
+            }
+
+            cityDictionary[person.City].Add(person);
+        }
+
+        return cityDictionary;
+    }
+
+    //View Persons By State
+    public Dictionary<string, List<CreateContacts>> ViewByState()
+    {
+        Dictionary<string, List<CreateContacts>> stateDictionary = new Dictionary<string, List<CreateContacts>>();
+
+        foreach (CreateContacts person in contacts)
+        {
+            if (!stateDictionary.ContainsKey(person.State))
+            {
+                stateDictionary.Add(person.State, new List<CreateContacts>());
+            }
+
+            stateDictionary[person.State].Add(person);
+        }
+
+        return stateDictionary;
+    }
+
+    // Display
+    public void DisplayContacts(List<CreateContacts> persons)
+    {
+        foreach (CreateContacts person in persons)
+        {
+            Console.WriteLine("First Name: " + person.FirstName);
+            Console.WriteLine("Last Name: " + person.LastName);
+            Console.WriteLine("Address: " + person.Address);
+            Console.WriteLine("City: " + person.City);
+            Console.WriteLine("State: " + person.State);
+            Console.WriteLine("Zip: " + person.Zip);
+            Console.WriteLine("Phone Number: " + person.PhoneNumber);
+            Console.WriteLine("Email: " + person.Email);
+            Console.WriteLine();
+        }
+    }
 
 }
