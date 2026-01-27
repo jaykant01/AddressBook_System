@@ -72,7 +72,6 @@ class Program
 
                 addressBook.AddContact(person);
 
-                Console.WriteLine("Contact added successfully.");
 
                 Console.WriteLine("Do you want to add another contact? (y/n)");
                 choice = Console.ReadLine()[0];

@@ -32,4 +32,21 @@ public class CreateContacts
         Address = Address;
     }
 
+    public override bool Equals(object obj)
+    {
+        if (obj == null || !(obj is CreateContacts))
+            return false;
+
+        CreateContacts other = (CreateContacts)obj;
+
+        // Duplicate check based on First Name & Last Name
+        return this.FirstName.Equals(other.FirstName) &&
+               this.LastName.Equals(other.LastName);
+    }
+
+    public override int GetHashCode()
+    {
+        return FirstName.GetHashCode() + LastName.GetHashCode();
+    }
+
 }

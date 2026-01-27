@@ -6,7 +6,15 @@ public class AddressBook
 
     public void AddContact(CreateContacts person)
     {
-        contacts.Add(person);
+        if (contacts.Contains(person))
+        {
+            Console.WriteLine("Duplicate entry found. Contact already exists.");
+        }
+        else
+        {
+            contacts.Add(person);
+            Console.WriteLine("Contact added successfully.");
+        }
     }
 
     public void DisplayContact()
@@ -21,7 +29,7 @@ public class AddressBook
             Console.WriteLine("Zip: " + person.Zip);
             Console.WriteLine("Phone Number: " + person.PhoneNumber);
             Console.WriteLine("Email: " + person.Email);
-            Console.WriteLine("-----------------------------");
+            Console.WriteLine();
         }
     }
 
