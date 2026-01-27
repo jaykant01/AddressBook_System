@@ -36,10 +36,17 @@ class Program
         addressBook.DisplayContact();
 
         // Edit Contact
-        Console.WriteLine("Enter First Name of the contact to edit:");
-        string nameToEdit = Console.ReadLine();
+        //Console.WriteLine("Enter First Name of the contact to edit:");
+        //string nameToEdit = Console.ReadLine();
 
-        addressBook.EditContact(nameToEdit);
+        //addressBook.EditContact(nameToEdit);
+
+        // Delete Contact
+        Console.WriteLine("Enter First Name of the contact to delete:");
+        string nameToDelete = Console.ReadLine();
+
+        addressBook.DeleteContact(nameToDelete);
+
         Console.ReadKey();
     }
 }
