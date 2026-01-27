@@ -34,6 +34,12 @@ class Program
         AddressBook addressBook = new AddressBook();
         addressBook.AddContact(person);
         addressBook.DisplayContact();
+
+        // Edit Contact
+        Console.WriteLine("Enter First Name of the contact to edit:");
+        string nameToEdit = Console.ReadLine();
+
+        addressBook.EditContact(nameToEdit);
         Console.ReadKey();
     }
 }
