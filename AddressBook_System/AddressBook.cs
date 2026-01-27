@@ -107,4 +107,36 @@ public class AddressBook
         }
     }
 
+    //Search
+    public List<CreateContacts> SearchByCity(string city)
+    {
+        List<CreateContacts> result = new List<CreateContacts>();
+
+        foreach (CreateContacts person in contacts)
+        {
+            if (person.City == city)
+            {
+                result.Add(person);
+            }
+        }
+
+        return result;
+    }
+
+    public List<CreateContacts> SearchByState(string state)
+    {
+        List<CreateContacts> result = new List<CreateContacts>();
+
+        foreach (CreateContacts person in contacts)
+        {
+            if (person.State == state)
+            {
+                result.Add(person);
+            }
+        }
+
+        return result;
+    }
+
+
 }

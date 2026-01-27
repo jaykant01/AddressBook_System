@@ -102,6 +102,49 @@ class Program
             Console.WriteLine("Address Book not found.");
         }
 
+
+        // SEARCH BY CITY ACROSS ALL ADDRESS BOOKS 
+        Console.WriteLine("Enter City to search persons:");
+        string searchCity = Console.ReadLine();
+
+        foreach (var entry in addressBookDictionary)
+        {
+            List<CreateContacts> result = entry.Value.SearchByCity(searchCity);
+
+            foreach (CreateContacts person in result)
+            {
+                Console.WriteLine("Address Book: " + entry.Key);
+                Console.WriteLine("First Name: " + person.FirstName);
+                Console.WriteLine("Last Name: " + person.LastName);
+                Console.WriteLine("City: " + person.City);
+                Console.WriteLine("State: " + person.State);
+                Console.WriteLine();
+            }
+        }
+
+        //  SEARCH BY STATE ACROSS ALL ADDRESS BOOKS 
+        Console.WriteLine("Enter State to search persons:");
+        string searchState = Console.ReadLine();
+
+        foreach (var entry in addressBookDictionary)
+        {
+            List<CreateContacts> result = entry.Value.SearchByState(searchState);
+
+            foreach (CreateContacts person in result)
+            {
+                Console.WriteLine("Address Book: " + entry.Key);
+                Console.WriteLine("First Name: " + person.FirstName);
+                Console.WriteLine("Last Name: " + person.LastName);
+                Console.WriteLine("City: " + person.City);
+                Console.WriteLine("State: " + person.State);
+                Console.WriteLine("Zip: " + person.Zip);
+                Console.WriteLine("Phone Number: " + person.PhoneNumber);
+                Console.WriteLine("Email: " + person.Email);
+                Console.WriteLine();
+            }
+        }
+
+
         Console.ReadKey();
     }
 }
