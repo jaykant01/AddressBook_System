@@ -191,4 +191,44 @@ public class AddressBook
         }
     }
 
+    // Count by City
+    public Dictionary<string, int> CountByCity()
+    {
+        Dictionary<string, int> cityCount = new Dictionary<string, int>();
+
+        foreach (CreateContacts person in contacts)
+        {
+            if (!cityCount.ContainsKey(person.City))
+            {
+                cityCount.Add(person.City, 1);
+            }
+            else
+            {
+                cityCount[person.City]++;
+            }
+        }
+
+        return cityCount;
+    }
+
+    // Count by State
+    public Dictionary<string, int> CountByState()
+    {
+        Dictionary<string, int> stateCount = new Dictionary<string, int>();
+
+        foreach (CreateContacts person in contacts)
+        {
+            if (!stateCount.ContainsKey(person.State))
+            {
+                stateCount.Add(person.State, 1);
+            }
+            else
+            {
+                stateCount[person.State]++;
+            }
+        }
+
+        return stateCount;
+    }
+
 }

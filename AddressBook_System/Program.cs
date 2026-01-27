@@ -178,6 +178,40 @@ class Program
             }
         }
 
+        // Count by city
+        Console.WriteLine("COUNT PERSONS BY CITY");
+
+        foreach (var entry in addressBookDictionary)
+        {
+            Console.WriteLine("Address Book: " + entry.Key);
+
+            Dictionary<string, int> cityCountMap = entry.Value.CountByCity();
+
+            foreach (var cityEntry in cityCountMap)
+            {
+                Console.WriteLine("City: " + cityEntry.Key + " | Count: " + cityEntry.Value);
+            }
+
+            Console.WriteLine();
+        }
+
+        // Count by State
+        Console.WriteLine("COUNT PERSONS BY STATE");
+
+        foreach (var entry in addressBookDictionary)
+        {
+            Console.WriteLine("Address Book: " + entry.Key);
+
+            Dictionary<string, int> stateCountMap = entry.Value.CountByState();
+
+            foreach (var stateEntry in stateCountMap)
+            {
+                Console.WriteLine("State: " + stateEntry.Key + " | Count: " + stateEntry.Value);
+            }
+
+            Console.WriteLine();
+        }
+
 
 
         Console.ReadKey();
