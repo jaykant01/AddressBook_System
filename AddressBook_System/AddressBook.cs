@@ -248,5 +248,23 @@ public class AddressBook
         }
     }
 
+    public void SortByCity()
+    {
+        contacts.Sort((p1, p2) => p1.City.CompareTo(p2.City));
+        Console.WriteLine("Contacts sorted by City.");
+    }
+
+    public void SortByState()
+    {
+        contacts.Sort((p1, p2) => p1.State.CompareTo(p2.State));
+        Console.WriteLine("Contacts sorted by State.");
+    }
+
+    public void SortByZip()
+    {
+        contacts.Sort((p1, p2) => p1.Zip.CompareTo(p2.Zip));
+        Console.WriteLine("Contacts sorted by Zip.");
+    }
+
 
 }

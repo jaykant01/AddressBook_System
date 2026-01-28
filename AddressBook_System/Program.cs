@@ -223,6 +223,33 @@ class Program
 
         addressBook.DisplayAllUsingToString();
 
+        Console.WriteLine("1. Sort by City");
+        Console.WriteLine("2. Sort by State");
+        Console.WriteLine("3. Sort by Zip");
+
+        int sortChoice = Convert.ToInt32(Console.ReadLine());
+
+        switch (sortChoice)
+        {
+            case 1:
+                addressBook.SortByCity();
+                break;
+
+            case 2:
+                addressBook.SortByState();
+                break;
+
+            case 3:
+                addressBook.SortByZip();
+                break;
+
+            default:
+                Console.WriteLine("Invalid choice");
+                break;
+        }
+
+        addressBook.DisplayAllUsingToString();
+
 
         Console.ReadKey();
     }
