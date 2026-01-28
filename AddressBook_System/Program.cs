@@ -6,6 +6,9 @@ class Program
     {
         Console.WriteLine("Welcome to Address Book Program");
 
+        AddressBook addressBook = null;
+
+
         // Dictionary to store multiple Address Books
         Dictionary<string, AddressBook> addressBookDictionary = new Dictionary<string, AddressBook>();
 
@@ -19,7 +22,7 @@ class Program
 
             if (!addressBookDictionary.ContainsKey(addressBookName))
             {
-                AddressBook addressBook = new AddressBook();
+                addressBook = new AddressBook();
                 addressBookDictionary.Add(addressBookName, addressBook);
 
                 Console.WriteLine("Address Book added successfully.");
@@ -39,7 +42,8 @@ class Program
         string selectedBookName = Console.ReadLine();
         if (addressBookDictionary.ContainsKey(selectedBookName))
         {
-            AddressBook addressBook = addressBookDictionary[selectedBookName];
+            addressBook = addressBookDictionary[selectedBookName];
+
 
             //Add Multiple Contacts
             do
@@ -212,6 +216,12 @@ class Program
             Console.WriteLine();
         }
 
+        // Sort By 
+        Console.WriteLine("SORT CONTACTS BY NAME");
+
+        addressBook.SortByName();
+
+        addressBook.DisplayAllUsingToString();
 
 
         Console.ReadKey();

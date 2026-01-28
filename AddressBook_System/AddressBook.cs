@@ -231,4 +231,22 @@ public class AddressBook
         return stateCount;
     }
 
+    //Sort By
+    public void SortByName()
+    {
+        contacts.Sort((p1, p2) => p1.FirstName.CompareTo(p2.FirstName));
+
+        Console.WriteLine("Contacts sorted by First Name successfully.");
+    }
+
+    // Display sort
+    public void DisplayAllUsingToString()
+    {
+        foreach (CreateContacts person in contacts)
+        {
+            Console.WriteLine(person);   
+        }
+    }
+
+
 }

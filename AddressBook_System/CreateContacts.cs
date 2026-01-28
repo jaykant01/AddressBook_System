@@ -49,4 +49,17 @@ public class CreateContacts
         return FirstName.GetHashCode() + LastName.GetHashCode();
     }
 
+    public override string ToString()
+    {
+        return "First Name: " + FirstName +
+               "\nLast Name: " + LastName +
+               "\nAddress: " + Address +
+               "\nCity: " + City +
+               "\nState: " + State +
+               "\nZip: " + Zip +
+               "\nPhone Number: " + PhoneNumber +
+               "\nEmail: " + Email +
+               "\n ";
+    }
+
 }
